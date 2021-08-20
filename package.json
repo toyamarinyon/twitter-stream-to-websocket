@@ -1,0 +1,24 @@
+{
+  "name": "twitter-stream-to-websocket",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/toyamarinyon/twitter-stream-to-websocket.git"
+  },
+  "author": "@toyamatinyon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toyamarinyon/twitter-stream-to-websocket/issues"
+  },
+  "homepage": "https://github.com/toyamarinyon/twitter-stream-to-websocket#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "got": "^11.8.2",
+    "ws": "^8.2.0"
+  }
+}
