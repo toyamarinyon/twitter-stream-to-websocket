@@ -1,6 +1,11 @@
 {
-  "name": "WebSocketサーバー",
-  "description": "ProcessingやTouchDesignerで作成したアプリケーション間でリアルタイムに情報をやりとりするためのWebSocketサーバーをherokuに作成します",
+  "name": "Twitter Stream to WebSocketサーバー",
+  "description": "特定の内容を含むtweetをライブで取得し、Websocketにブロードキャストします",
   "repository": "https://github.com/toyamarinyon/twitter-stream-to-websocket",
-  "keywords": ["node", "websocket"]
+  "keywords": ["node", "websocket"],
+  "env": {
+    "TWITTER_BEARER_TOKEN": {
+      "description": "twitterのAppのBEATER TOKENを設定してください"
+    }
+  }
 }
