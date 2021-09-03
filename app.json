@@ -1,0 +1,6 @@
+{
+  "name": "WebSocketサーバー",
+  "description": "ProcessingやTouchDesignerで作成したアプリケーション間でリアルタイムに情報をやりとりするためのWebSocketサーバーをherokuに作成します",
+  "repository": "https://github.com/toyamarinyon/twitter-stream-to-websocket",
+  "keywords": ["node", "websocket"]
+}

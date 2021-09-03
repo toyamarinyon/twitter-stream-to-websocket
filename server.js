@@ -7,6 +7,11 @@ const { Server } = require('ws');
 const PORT = process.env.PORT || 3000;
 const INDEX = '/index.html';
 
+if (!process.env.TWITTER_BEARER_TOKEN) {
+  console.error('This app requires TWITTER_BEARER_TOKEN in process.env. Please set TWITTER_BEARER_TOKEN.')
+  process.exit(1)
+}
+
 const server = express()
   .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
@@ -56,7 +61,6 @@ try {
           if (json.data) {
             console.log(json.data)
             wss.clients.forEach((client) => {
-              console.log('hello!')
               client.send(`${json.data.text}`);
           });
           } else {
