@@ -12,14 +12,18 @@ void settings() {
 
 void draw() {
   background(244);
-  // 30秒ごとにWebsocket サーバーに 接続維持メッセージを送信する
-  if ((millis() - lastKeepAliveTime) > 30 * 1000) {
-    lastKeepAliveTime = millis();
-    wsc.sendMessage("KEEPALIVE");
-  }  
+  keepAlive();
 }
 
 
 void webSocketEvent(String msg) {
   println(msg);
+}
+
+void keepAlive() {
+  // 30秒ごとにWebsocket サーバーに 接続維持メッセージを送信する
+  if ((millis() - lastKeepAliveTime) > 30 * 1000) {
+    lastKeepAliveTime = millis();
+    wsc.sendMessage("KEEPALIVE");
+  }  
 }
