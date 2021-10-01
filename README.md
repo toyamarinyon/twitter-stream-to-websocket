@@ -88,3 +88,10 @@ curl 'https://api.twitter.com/2/tweets/search/stream/rules' \
 
 入力できたら「Deploy app」ボタンを押します
 アプリの作成までしばらく待ちます
+
+# サーバの更新方法
+作成したサーバを削除して再度作成します
+## サーバの削除
+1. https://dashboard.heroku.com/apps にアクセスして、サーバを選択します
+2. 「Setting」を押します
+3. 一番下の「Delete app」を押します
