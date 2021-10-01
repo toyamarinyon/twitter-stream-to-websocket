@@ -19,7 +19,7 @@ const server = express()
 const wss = new Server({ server });
 
 const streamURL = new URL(
-  "https://api.twitter.com/2/tweets/search/stream?tweet.fields=context_annotations&expansions=author_id"
+  "https://api.twitter.com/2/tweets/search/stream?tweet.fields=author_id,created_at&expansions=author_id&user.fields=name"
 );
 
 wss.on('connection', function connection(ws) {
@@ -59,9 +59,13 @@ try {
           // reconnect(stream, socket, token);
         } else {
           if (json.data) {
-            console.log(json.data)
+            // console.log(json.data)
+            const username = json.includes.users[0].username
+            const message = `${json.data.text},${username},${json.data.created_at}`
+            console.log(`send message: ${message}`)
+
             wss.clients.forEach((client) => {
-              client.send(`${json.data.text}`);
+              client.send(message);
           });
           } else {
             console.error(json)
