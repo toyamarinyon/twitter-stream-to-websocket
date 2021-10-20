@@ -2,12 +2,13 @@ import websockets.*;
 
 WebsocketClient wsc;
 
-String host = "ws://your-app-name.herokuapp.com";
+String host = "ws://localhost:3334";
 int lastKeepAliveTime = 0;
 
 void settings() {
   size(200, 200); 
   wsc= new WebsocketClient(this, host);
+  wsc.sendMessage("FETCH_TWEET:#ttrealtime");
 }
 
 void draw() {
